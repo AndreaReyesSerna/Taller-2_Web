@@ -31,9 +31,12 @@ var dbVenta = 'ventas';
 app.get('/', function (req, res) {
 
   var productos = db.collection(dbName).find();
-  
+
 });
 
+app.listen(3000, function () {
+    console.log('Example app listening on port 3000!');
+  });
 //npm init
 //npm install express handlebars consolidate 
 //mongo/mongod/mongodb

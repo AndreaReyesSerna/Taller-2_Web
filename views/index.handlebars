@@ -10,23 +10,44 @@
 </head>
 
 <body>
-   <header class="nav">
-        <div class="nav__logo">
-            <img class="nav__logo__img" src="../static/img/logo.png" alt="">
+    <div class="container">
+        <header class="nav">
+            <div class="nav__logo">
+                <img class="nav__logo__img" src="../static/img/logo.png" alt="">
+            </div>
+
+            <div class="nav__menu">
+                <p class="nav__menu__item">New Arrivals</p>
+                <p class="nav__menu__item">Gifts</p>
+                <p class="nav__menu__item">About Us</p>
+                <p class="nav__menu__item">Contact</p>
+                <p class="nav__menu__item">Shop</p>
+            </div>
+        </header>
+
+        <div class="banner">
+            <p>This is Tiffany</p>
         </div>
 
-        <div class="nav__menu">
-            <p class="nav__menu__item">New Arrivals</p>
-            <p class="nav__menu__item">Gifts</p>
-            <p class="nav__menu__item">About Us</p>
-            <p class="nav__menu__item">Contact</p>
-            <p class="nav__menu__item">Shop</p>
-        </div>
-    </header>
 
-    <div class="banner">
-        <p>This is Tiffany</p>
+        <div class="productos">
+            {{#each productos}}
+            <a href="/productos/{{_id}}">
+                <div class="producto {{#if free}}free{{/if}}" data-id="{{_id}}">
+                    <h3>{{nombre}}</h3>
+                    <img src="../static/img/{{nombre}}.png" alt="">
+                    <p>Precio: $ {{precio}}</p>
+                    <p>Tamano: {{tamano}}</p>
+                    <div class="btns">
+                        <button class="add">Añadir al carrito</button>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+
     </div>
+
 
 </body>
 
